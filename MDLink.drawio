@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-20T04:19:30.073Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="7Gd9UZBED1U1ZEjppC3f" version="21.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-20T13:45:23.393Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="-EzPt01PPRKd3I6alOca" version="21.0.7" type="github">
   <diagram name="Página-1" id="93haLuahg1Ov3Uhfy_TV">
-    <mxGraphModel dx="848" dy="669" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="933" dy="669" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -201,7 +201,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="hgT8orxahQxK94bdxHds-1" value="Va a leer un archivo, si no es archivo es un directorio. Crear funcion que recorra el directorio y que cada archivo que encuentre lo compruebe si es un md" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="560" y="1380" width="230" height="120" as="geometry" />
+          <mxGeometry x="530" y="1260" width="230" height="120" as="geometry" />
         </mxCell>
         <mxCell id="hgT8orxahQxK94bdxHds-2" value="¿Es un &lt;br&gt;directorio?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="650" y="340" width="100" height="100" as="geometry" />
@@ -263,6 +263,9 @@
               <mxPoint x="120" y="915" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="hgT8orxahQxK94bdxHds-26" value="Los stats no deberían incluirse? porque la unica propiedad es validate??" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="74" y="1260" width="410" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
