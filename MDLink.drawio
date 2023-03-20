@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-03-20T13:45:23.393Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="-EzPt01PPRKd3I6alOca" version="21.0.7" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-20T15:54:14.347Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="iUvgjjtGfOMeozy6SGDN" version="21.0.7" type="github">
   <diagram name="Página-1" id="93haLuahg1Ov3Uhfy_TV">
-    <mxGraphModel dx="933" dy="669" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1167" dy="601" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -54,7 +54,7 @@
             <mxPoint x="150" y="270" as="sourcePoint" />
             <mxPoint x="159.5" y="303.5" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="100" y="395" />
+              <mxPoint x="100" y="420" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -83,7 +83,7 @@
           <mxGeometry x="431" y="340" width="108" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-15" value="Muestra mensaje&lt;br&gt;de Error: &lt;br&gt;&quot;No es un archivo.md&quot;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
-          <mxGeometry x="237" y="360" width="174" height="69" as="geometry" />
+          <mxGeometry x="243.5" y="390" width="161" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-29" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="hgT8orxahQxK94bdxHds-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -109,7 +109,7 @@
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-33" value="Se crea función que recorra el directorio" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="640" y="502.5" width="120" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="Y0-RWTtbSj_2u-Xx135a-34" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="Y0-RWTtbSj_2u-Xx135a-10" target="Y0-RWTtbSj_2u-Xx135a-12" edge="1">
+        <mxCell id="Y0-RWTtbSj_2u-Xx135a-34" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;dashed=1;dashPattern=8 8;" parent="1" source="Y0-RWTtbSj_2u-Xx135a-10" target="Y0-RWTtbSj_2u-Xx135a-12" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="595" y="339.97" as="sourcePoint" />
             <mxPoint x="485" y="300" as="targetPoint" />
@@ -218,12 +218,12 @@
         <mxCell id="hgT8orxahQxK94bdxHds-6" value="SÍ" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="489" y="562" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="hgT8orxahQxK94bdxHds-7" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;entryX=0.462;entryY=1.002;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Y0-RWTtbSj_2u-Xx135a-40" target="Y0-RWTtbSj_2u-Xx135a-15">
+        <mxCell id="hgT8orxahQxK94bdxHds-7" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Y0-RWTtbSj_2u-Xx135a-40" target="Y0-RWTtbSj_2u-Xx135a-15">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="440" y="520" as="sourcePoint" />
             <mxPoint x="320" y="460" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="317" y="525" />
+              <mxPoint x="324" y="525" />
             </Array>
           </mxGeometry>
         </mxCell>
