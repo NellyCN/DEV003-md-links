@@ -1,28 +1,28 @@
-<mxfile host="app.diagrams.net" modified="2023-03-21T14:10:02.201Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="tcgGsYq_-vqpSD7OIf96" version="21.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-21T14:12:01.893Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="yZ3gMJUSST35bi73DpFS" version="21.0.8" type="github">
   <diagram name="Página-1" id="93haLuahg1Ov3Uhfy_TV">
     <mxGraphModel dx="998" dy="502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-1" value="INICIO" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="279.37" y="50" width="90" height="40" as="geometry" />
+          <mxGeometry x="274.87" y="50" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-2" value="Ingresa ruta&lt;br&gt;( path, option )" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="264" y="120" width="120" height="40" as="geometry" />
+          <mxGeometry x="259.5" y="120" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-3" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="Y0-RWTtbSj_2u-Xx135a-1" target="Y0-RWTtbSj_2u-Xx135a-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="300" y="220" as="sourcePoint" />
-            <mxPoint x="350" y="170" as="targetPoint" />
+            <mxPoint x="295.5" y="220" as="sourcePoint" />
+            <mxPoint x="345.5" y="170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-4" value="La Ruta es &lt;br&gt;Valida?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
-          <mxGeometry x="271" y="200" width="106" height="100" as="geometry" />
+          <mxGeometry x="266.5" y="200" width="106" height="100" as="geometry" />
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-5" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="Y0-RWTtbSj_2u-Xx135a-2" target="Y0-RWTtbSj_2u-Xx135a-4" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="324" y="160" as="sourcePoint" />
-            <mxPoint x="324" y="200" as="targetPoint" />
+            <mxPoint x="319.5" y="160" as="sourcePoint" />
+            <mxPoint x="319.5" y="200" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-6" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" source="Y0-RWTtbSj_2u-Xx135a-4" target="Y0-RWTtbSj_2u-Xx135a-12" edge="1">
@@ -41,7 +41,7 @@
           <mxGeometry x="290" y="300" width="29" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-9" value="SÍ" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="377" y="220" width="30" height="30" as="geometry" />
+          <mxGeometry x="371" y="220" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Y0-RWTtbSj_2u-Xx135a-10" value="Convertir Ruta Relativa a Absoluta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="630" y="225.5" width="120" height="49" as="geometry" />
@@ -321,25 +321,27 @@
             <mxPoint x="140" y="1090" as="sourcePoint" />
             <mxPoint x="69" y="630" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="485" y="1150" />
-              <mxPoint x="70" y="1150" />
+              <mxPoint x="485" y="1140" />
+              <mxPoint x="70" y="1140" />
               <mxPoint x="70" y="660" />
+              <mxPoint x="71" y="660" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="On1AbhgCIfUnlUdx-mSk-40" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="On1AbhgCIfUnlUdx-mSk-36" target="Y0-RWTtbSj_2u-Xx135a-20" edge="1">
+        <mxCell id="On1AbhgCIfUnlUdx-mSk-40" value="" style="edgeStyle=segmentEdgeStyle;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;entryX=0;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="On1AbhgCIfUnlUdx-mSk-36" target="Y0-RWTtbSj_2u-Xx135a-20" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="780" y="1050" as="sourcePoint" />
+            <mxPoint x="670" y="1130" as="sourcePoint" />
             <mxPoint x="50" y="630" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="715" y="1160" />
-              <mxPoint x="50" y="1160" />
+              <mxPoint x="670" y="1122" />
+              <mxPoint x="670" y="1150" />
+              <mxPoint x="50" y="1150" />
               <mxPoint x="50" y="503" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="On1AbhgCIfUnlUdx-mSk-41" value="&lt;font style=&quot;border-color: var(--border-color); font-size: 10px; text-align: left;&quot;&gt;&lt;br style=&quot;border-color: var(--border-color); font-size: 10px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Mostrar Links -&lt;br style=&quot;border-color: var(--border-color); font-size: 10px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;Devuelve un array de objetos con:&lt;br style=&quot;border-color: var(--border-color); font-size: 10px;&quot;&gt;&lt;/font&gt;&lt;ul style=&quot;border-color: var(--border-color); font-size: 10px; text-align: left;&quot;&gt;&lt;li style=&quot;border-color: var(--border-color); box-sizing: border-box; font-size: 10px;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 10px;&quot; face=&quot;Helvetica&quot;&gt;&lt;code style=&quot;border-color: var(--border-color); box-sizing: border-box; padding: 0.2em 0.4em; margin: 0px; background-color: var(--color-neutral-muted); border-radius: 6px; font-size: 10px;&quot;&gt;href&lt;/code&gt;: URL encontrada.&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color); box-sizing: border-box; margin-top: 0.25em; font-size: 10px;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 10px;&quot; face=&quot;Helvetica&quot;&gt;&lt;code style=&quot;border-color: var(--border-color); box-sizing: border-box; padding: 0.2em 0.4em; margin: 0px; background-color: var(--color-neutral-muted); border-radius: 6px; font-size: 10px;&quot;&gt;text&lt;/code&gt;: Texto que aparecía dentro del link (&lt;code style=&quot;border-color: var(--border-color); box-sizing: border-box; padding: 0.2em 0.4em; margin: 0px; background-color: var(--color-neutral-muted); border-radius: 6px; font-size: 10px;&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt;).&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color); box-sizing: border-box; margin-top: 0.25em; font-size: 10px;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 10px;&quot; face=&quot;Helvetica&quot;&gt;&lt;code style=&quot;border-color: var(--border-color); box-sizing: border-box; padding: 0.2em 0.4em; margin: 0px; background-color: var(--color-neutral-muted); border-radius: 6px; font-size: 10px;&quot;&gt;file&lt;/code&gt;: Ruta del archivo donde se encontró el link.&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color); box-sizing: border-box; margin-top: 0.25em; font-size: 10px;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 10px;&quot; face=&quot;Helvetica&quot;&gt;&lt;code style=&quot;border-color: var(--border-color); box-sizing: border-box; padding: 0.2em 0.4em; margin: 0px; background-color: var(--color-neutral-muted); border-radius: 6px; font-size: 10px;&quot;&gt;status&lt;/code&gt;: Código de respuesta HTTP.&lt;/font&gt;&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color); box-sizing: border-box; margin-top: 0.25em; font-size: 10px;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 10px;&quot; face=&quot;Helvetica&quot;&gt;&lt;code style=&quot;border-color: var(--border-color); box-sizing: border-box; padding: 0.2em 0.4em; margin: 0px; background-color: var(--color-neutral-muted); border-radius: 6px; font-size: 10px;&quot;&gt;ok&lt;/code&gt;: Mensaje&amp;nbsp;&lt;code style=&quot;border-color: var(--border-color); box-sizing: border-box; padding: 0.2em 0.4em; margin: 0px; background-color: var(--color-neutral-muted); border-radius: 6px; font-size: 10px;&quot;&gt;fail&lt;/code&gt;&amp;nbsp;en caso de fallo u&amp;nbsp;&lt;code style=&quot;border-color: var(--border-color); box-sizing: border-box; padding: 0.2em 0.4em; margin: 0px; background-color: var(--color-neutral-muted); border-radius: 6px; font-size: 10px;&quot;&gt;ok&lt;/code&gt;&amp;nbsp;en caso de éxito.&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="112.5" y="1010" width="276" height="130" as="geometry" />
+          <mxGeometry x="111.87" y="1000.91" width="276" height="130" as="geometry" />
         </mxCell>
         <mxCell id="On1AbhgCIfUnlUdx-mSk-42" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="hgT8orxahQxK94bdxHds-18" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
