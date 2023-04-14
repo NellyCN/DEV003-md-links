@@ -17,6 +17,7 @@
 </p></details>
 <p>
 
-  * [Sitio oficial de npm (en inglés)](https://www.npmjs.com/)
+  * [Sitio oficial de npm (en inglés)](https://docs.npmjs.com/getting-started/publishing-npm-packages)
 </p></details>
+
  

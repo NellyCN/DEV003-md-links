@@ -1,7 +1,5 @@
 const fs = require("fs"); // file system functions
-const { resolve } = require("path");
 const path = require("path"); // path functions
-// const fetch = require('node-fetch');  // fetch functions
 
 const route =
   "C:/Users//Admin////Desktop//Courses//nodejs-fundamentals//7. path/examples/normalize.js";
@@ -12,23 +10,23 @@ const routeJpg = "C:/LABORATORIA/PROYECTO4/DEV003-md-links/thumb.png";
 
 // 1. CONFIRMAR SI LA RUTA EXISTE O ES VALIDA OK
 const pathExists = (routeAbs) => fs.existsSync(routeAbs); // esta funcionando síncronamente
-pathExists(routeAbs);
+// pathExists(routeAbs);
 // console.log(pathExists(routeRelative));
 
 // 2. CONFIRMAR SI LA RUTA ES ABSOLUTA OK
 const pathIsAbsolute = (routeAbs) => path.isAbsolute(routeAbs);
-pathIsAbsolute(routeAbs);
+// pathIsAbsolute(routeAbs);
 // console.log(pathIsAbsolute(routeErr));
 
 // 3. CONVERTIR LA RUTA RELATIVA A ABSOLUTA OK
 // const changeToAbs = (routeRelative) => path.join(__dirname, routeRelative);
 const changeToAbs = (routeAbs) => path.resolve(routeAbs);
-changeToAbs(routeAbs);
+// changeToAbs(routeAbs);
 // console.log(changeToAbs(routeAbs));
 
 // 4. CONFIRMAR SI ES RUTA DE UN ARCHIVO
 const pathisfile = (routeAbs) => fs.statSync(routeAbs).isFile();
-changeToAbs(routeAbs);
+// changeToAbs(routeAbs);
 // console.log(pathisfile(routeAbs));
 
 // 5. CONFIRMAR SI ES UN ARCHIVO .MD
@@ -36,7 +34,7 @@ const isMdFile = (routeAbs) => {
   const extensionMd = path.extname(routeAbs);
   return extensionMd === ".md";
 };
-isMdFile(routeAbs)
+// isMdFile(routeAbs);
 // console.log(pathisfile(routeAbs))
 
 // 6. LEE EL ARCHIVO DE LA RUTA
@@ -80,9 +78,8 @@ const getLinks = (route) => {
         }
         // console.log(arrayObjects)
         resolve(arrayObjects);
-      }
-      else {
-        reject ('Esta ruta no tiene urls')
+      } else {
+        reject("Esta ruta no tiene urls");
       }
     });
   });
@@ -90,41 +87,42 @@ const getLinks = (route) => {
 // getLinks(routeAbs).then(console.log);
 
 // VALIDACIÓN LINKS OK // revisar linea por linea
- const validateLink = (arrayLinks) => { 
-    const getStatus = arrayLinks.map((link) => {  // donde se guardarà el nuevo array de objetos
-    //  console.log
-      return fetch(link.href) // fetch recibe como parámetro el link con su prop .href
-          .then((resolveLink) => {
-              const linksStatusMessage = {
-                  text: link.text,
-                  href: link.href,
-                  file: link.file,
-                  status: resolveLink.status,
-                  message: resolveLink.status >= 200 && resolveLink.status < 400 ? 'OK' : 'FAIL' // Usamos un operador ternario para la condicional expr1=true y expr2=false
-              };
-              return linksStatusMessage;
-          }).catch((error) => {
-              const statusError = {
-                  text: link.text,  
-                  href: link.href,
-                  file: link.file,
-                  status: error.status,
-                  message: 'Status is Undefined'
-              };
-              return statusError;
-          });
+const validateLink = (arrayLinks) => {
+  const getStatus = arrayLinks.map((link) => {
+    return fetch(link.href) // fetch recibe como parámetro el link con su prop .href
+      .then((resolveLink) => {  // Si se resuelve la promesa
+        const linksStatusMessage = {  // Asigno a linksStatusMessage 5 propiedades que se mostrarán con cada link
+          text: link.text,
+          href: link.href,
+          file: link.file,
+          status: resolveLink.status,
+          message: resolveLink.status > 400 ? 'FAIL' : 'OK' // Usamos un operador ternario para la condicional expr1=true y expr2=false
+        };
+        return linksStatusMessage;
+      })
+      .catch((error) => { // Si se rechaza la promesa, debería mostrarnos un error y por cada link un mensaje de error 
+        const statusError = {
+          text: link.text,
+          href: link.href,
+          file: link.file,
+          status: error.status,
+          message: "Status is Undefined", // En el caso de los links que se muestran en status = "undefined", se mostrará el mensaje
+        };
+        return statusError;
+      });
   });
   return Promise.all(getStatus); // Una vez resueltas la promesa, se debería retornar el getstatus o se rechaza
 };
-// promesas anidadas
+// PROMESAS ANIDADAS - Primero llamo a getLinks, que me tiene que traer el array de objetos de los links
 // getLinks(routeAbs)
-//   .then((arrlinks) => {
+//   .then((arrlinks) => {  // si resolvemos la promesa debemos pasarle como argumento el array de links
 //       console.log("Array de Objetos", arrlinks)
-//       validateLink(arrlinks).then((resultados) => {console.log("Agregando Status y Mensaje", resultados)})
+//       validateLink(arrlinks)
+//    .then((resultados) => {
+//    console.log("Agregando Status y Mensaje", resultados)})
 //   })
 
-
- module.exports = {
+module.exports = {
   pathExists,
   pathIsAbsolute,
   changeToAbs,
@@ -132,32 +130,5 @@ const getLinks = (route) => {
   isMdFile, // ...
   readFileMd,
   getLinks,
-  validateLink
+  validateLink,
 };
-
-//VALIDACIÓN LINKS
-// let arrays = ['https://github.com/NellyCN/DEV003-md-links','https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback','https://docs.npmjs.com/getting-started/what-is-npm']
-// // console.log(arrays);
-// const validateLink = (arrays) => {  //ok
-// //  return new Promise((resolve, reject) => {
-//   let promisesArrays =  [];    //ok  
-//       promisesArrays = arrays.map((link) => fetch(link.href)    
-//     .then(response => {
-//     return {
-//       status: response.status
-//     };
-//     })
-//     .catch({
-//               error,
-//               mensaje:
-//                 "No hay arrays",
-//             })
-//     )
-//         console.log(promisesArrays) //llave cierra funcion despues de new promise
-//      return promisesArrays;
-//     // ); // parentesis de new promise
-//  }  // llave de cierre función validateLink
-//  validateLink(arrays)
-//  .then(console.log)
-
-
