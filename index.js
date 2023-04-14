@@ -1,4 +1,5 @@
 const fs = require("fs"); // file system functions
+const { resolve } = require("path");
 const path = require("path"); // path functions
 // const fetch = require('node-fetch');  // fetch functions
 
@@ -63,26 +64,27 @@ const readFileMd = (route) => {
 
 // 7. EXTRAE LINKS DEL ARCHIVO .MD funcion  q recibe data y retorna array de objetos
 const getLinks = (route) => {
-  return readFileMd(route).then((data) => {
-    // const regularExpression = /\[(.+)\]\((https?:\/\/\w+.+)\)/g; // Creamos una expresión regular que haga match con los links dentro del archivo leído
-    const regularExpression = /\[(.+?)\]\((https?:\/\/[^\s]+)\)/g;
-    let arrayObjects = [];
-    let arraylinks = data.matchAll(regularExpression);
-    if (arraylinks !== null) {
-      for (let value of arraylinks) {
-        arrayObjects.push({
-          text: value[1],
-          href: value[2],
-          file: route,
-        });
+  return new Promise((resolve, reject) => {
+    readFileMd(route).then((data) => {
+      // const regularExpression = /\[(.+)\]\((https?:\/\/\w+.+)\)/g; // Creamos una expresión regular que haga match con los links dentro del archivo leído
+      const regularExpression = /\[(.+?)\]\((https?:\/\/[^\s]+)\)/g;
+      let arrayObjects = [];
+      let arraylinks = data.matchAll(regularExpression);
+      if (arraylinks !== null) {
+        for (let value of arraylinks) {
+          arrayObjects.push({
+            text: value[1],
+            href: value[2],
+            file: route,
+          });
+        }
+        // console.log(arrayObjects)
+        resolve(arrayObjects);
       }
-      // console.log(arrayObjects)
-      return arrayObjects;
-    }
-    // else {
-    //   return ('Esta ruta no tiene urls')
-    // }
-    // return [];
+      else {
+        reject ('Esta ruta no tiene urls')
+      }
+    });
   });
 };
 // getLinks(routeAbs).then(console.log);
