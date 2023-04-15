@@ -74,7 +74,7 @@ describe('getLinks', () => {
       },
       {
         text: 'Sitio oficial de npm (en inglés)',
-        href: 'https://www.npmjs.com/',
+        href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
       }
     ]
@@ -122,7 +122,7 @@ describe('validateLink', () => {
       },
       {
         text: 'Sitio oficial de npm (en inglés)',
-        href: 'https://www.npmjs.com/',
+        href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
       }
     ]
@@ -132,7 +132,7 @@ describe('validateLink', () => {
         href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/omise',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
         status: 200,
-        message: 'FAIL'
+        message: 'OK'
       },
       {
         text: 'How to Write a JavaScript Promise - freecodecamp (en inglés)',
@@ -153,21 +153,21 @@ describe('validateLink', () => {
         href: 'https://jestjs.io/docs/es-ES/asynchronous',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
         status: 404,
-        message: 'OK'
+        message: 'FAIL'
       },
       {
         text: 'Manual Mocks con Jest - Documentación oficial',
         href: 'https://jestjs.io/docs/es-ES/manual-mocks',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
         status: 404,
-        message: 'OK'
+        message: 'FAIL'
       },
       {
         text: 'Sitio oficial de npm (en inglés)',
-        href: 'https://www.npmjs.com/',
+        href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
         status: 404,
-        message: 'OK'
+        message: 'FAIL'
       }
     ]
     return validateLink(testArrayObjects).then(link => { 
@@ -177,14 +177,50 @@ describe('validateLink', () => {
   });
 });
 
+
 // describe('readFileMd', () => {
+
+//   it('Debería devolver una promesa', () => {
+//     expect(readFileMd('C:/LABORATORIA/PROYECTO4/DEV003-md-links/mockTest.md')).resolves.toBe(typeof Promise);  //
+//   });
+//   it('Debe rechazar la promesa, cuando el archivo no se pueda leer', () => {
+//     return readFileMd('C:/LABORATORIA/PROYECTO4/DEV003-md-links/mockTest.md').rejects.catch((error) => {  // función asíncrona
+//       expect(error).toBe('Error al leer el archivo');
+//     })
+//   });
+// });
+
+
+
+// test('readFileMd', () => {
 //   test('Debería devolver una promesa', async () => {
-//     await expect(readFileMd('C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md')).resolves.toBe(typeof Promise);  //
+//     await expect(readFileMd('C:/LABORATORIA/PROYECTO4/DEV003-md-links/mockTest.md')).resolves.toBe(typeof Promise);  //
 //   });
 //   test('Debe rechazar la promesa, cuando el archivo no se pueda leer', async () => {
-//     await expect(readFileMd('C:/nelly/curso/TextDecoder.txt')).rejects.toBe(error);
+//     await expect(readFileMd('C:/nelly/curso/TextDecoder.txt')).rejects.toBe('Error al leer el archiv0');
 //   });
+// });
 
+// test('the data is peanut butter', async () => {
+//   const data = await fetchData();
+//   expect(data).toBe('peanut butter');
+// });
+
+// test('the fetch fails with an error', async () => {
+//   expect.assertions(1);
+//   try {
+//     await fetchData();
+//   } catch (e) {
+//     expect(e).toMatch('error');
+//   }
+// });
+// //
+// test('the data is peanut butter', async () => {
+//   await expect(fetchData()).resolves.toBe('peanut butter');
+// });
+
+// test('the fetch fails with an error', async () => {
+//   await expect(fetchData()).rejects.toMatch('error');
 // });
 
 // describe('validateLink', () => {
