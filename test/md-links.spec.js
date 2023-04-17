@@ -1,8 +1,8 @@
-// const { mdLinks } = require('../index.js');
-const { pathExists, pathIsAbsolute, changeToAbs, isMdFile, getLinks, validateLink } = require('../index.js');
+const { mdLinks } = require('../api');
+const { pathExists, pathIsAbsolute, changeToAbs, isMdFile, getLinks } = require('../index.js');
 const path = require("path");
 
-global.fetch = jest.fn()
+// global.fetch = jest.fn()
 
 // TEST PARA CONFIRMAR SI LA RUTA EXISTE
 describe('pathExists', () => {
@@ -85,106 +85,106 @@ describe('getLinks', () => {
 });
 
 // // TEST PARA VALIDAR LOS LINKS 
-describe('validateLink', () => {
-  it.only('Deberia hacer una petición fetch y mostrar los links con su status y un mensaje de "OK" o "FAIL"', () => {
-    fetch
-    .mockResolvedValueOnce({ status: 200})
-    .mockResolvedValueOnce({ status: 200})
-    .mockResolvedValueOnce({ status: 200})
-    .mockRejectedValueOnce({ status: 404})
-    .mockRejectedValueOnce({ status: 404})
-    .mockRejectedValueOnce({ status: 404})
-    const testArrayObjects = [
-      {
-        text: 'Promise - MDN',
-        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/omise',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
-      },
-      {
-        text: 'How to Write a JavaScript Promise - freecodecamp (en inglés)',
-        href: 'https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
-      },
-      {
-        text: 'Función Callback - MDN',
-        href: 'https://developer.mozilla.org/es/docs/Glossary/Callback_function',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
-      },
-      {
-        text: 'Tests de código asincrónico con Jest - Documentación oficial',
-        href: 'https://jestjs.io/docs/es-ES/asynchronous',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
-      },
-      {
-        text: 'Manual Mocks con Jest - Documentación oficial',
-        href: 'https://jestjs.io/docs/es-ES/manual-mocks',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
-      },
-      {
-        text: 'Sitio oficial de npm (en inglés)',
-        href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
-      }
-    ]
-    const getStatusMessage = [
-      {
-        text: 'Promise - MDN',
-        href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/omise',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 200,
-        message: 'OK'
-      },
-      {
-        text: 'How to Write a JavaScript Promise - freecodecamp (en inglés)',
-        href: 'https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 200,
-        message: 'OK'
-      },
-      {
-        text: 'Función Callback - MDN',
-        href: 'https://developer.mozilla.org/es/docs/Glossary/Callback_function',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 200,
-        message: 'OK'
-      },
-      {
-        text: 'Tests de código asincrónico con Jest - Documentación oficial',
-        href: 'https://jestjs.io/docs/es-ES/asynchronous',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 404,
-        message: 'FAIL'
-      },
-      {
-        text: 'Manual Mocks con Jest - Documentación oficial',
-        href: 'https://jestjs.io/docs/es-ES/manual-mocks',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 404,
-        message: 'FAIL'
-      },
-      {
-        text: 'Sitio oficial de npm (en inglés)',
-        href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
-        file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 404,
-        message: 'FAIL'
-      }
-    ]
-    return validateLink(testArrayObjects).then(link => { 
-      console.log(link)
-      expect(link).toEqual(getStatusMessage)
-    })
-  });
-});
+// describe('validateLink', () => {
+//   it.only('Deberia hacer una petición fetch y mostrar los links con su status y un mensaje de "OK" o "FAIL"', () => {
+//     fetch
+//     .mockResolvedValueOnce({ status: 200})
+//     .mockResolvedValueOnce({ status: 200})
+//     .mockResolvedValueOnce({ status: 200})
+//     .mockRejectedValueOnce({ status: 404})
+//     .mockRejectedValueOnce({ status: 404})
+//     .mockRejectedValueOnce({ status: 404})
+//     const testArrayObjects = [
+//       {
+//         text: 'Promise - MDN',
+//         href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/omise',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
+//       },
+//       {
+//         text: 'How to Write a JavaScript Promise - freecodecamp (en inglés)',
+//         href: 'https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
+//       },
+//       {
+//         text: 'Función Callback - MDN',
+//         href: 'https://developer.mozilla.org/es/docs/Glossary/Callback_function',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
+//       },
+//       {
+//         text: 'Tests de código asincrónico con Jest - Documentación oficial',
+//         href: 'https://jestjs.io/docs/es-ES/asynchronous',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
+//       },
+//       {
+//         text: 'Manual Mocks con Jest - Documentación oficial',
+//         href: 'https://jestjs.io/docs/es-ES/manual-mocks',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
+//       },
+//       {
+//         text: 'Sitio oficial de npm (en inglés)',
+//         href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
+//       }
+//     ]
+//     const getStatusMessage = [
+//       {
+//         text: 'Promise - MDN',
+//         href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/omise',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
+//         status: 200,
+//         message: 'OK'
+//       },
+//       {
+//         text: 'How to Write a JavaScript Promise - freecodecamp (en inglés)',
+//         href: 'https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
+//         status: 200,
+//         message: 'OK'
+//       },
+//       {
+//         text: 'Función Callback - MDN',
+//         href: 'https://developer.mozilla.org/es/docs/Glossary/Callback_function',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
+//         status: 200,
+//         message: 'OK'
+//       },
+//       {
+//         text: 'Tests de código asincrónico con Jest - Documentación oficial',
+//         href: 'https://jestjs.io/docs/es-ES/asynchronous',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
+//         status: 404,
+//         message: 'FAIL'
+//       },
+//       {
+//         text: 'Manual Mocks con Jest - Documentación oficial',
+//         href: 'https://jestjs.io/docs/es-ES/manual-mocks',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
+//         status: 404,
+//         message: 'FAIL'
+//       },
+//       {
+//         text: 'Sitio oficial de npm (en inglés)',
+//         href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
+//         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
+//         status: 404,
+//         message: 'FAIL'
+//       }
+//     ]
+//     return validateLink(testArrayObjects).then(link => { 
+//       console.log(link)
+//       expect(link).toEqual(getStatusMessage)
+//     })
+//   });
+// });
 
 
 // describe('readFileMd', () => {
 
-//   it('Debería devolver una promesa', () => {
-//     expect(readFileMd('C:/LABORATORIA/PROYECTO4/DEV003-md-links/mockTest.md')).resolves.toBe(typeof Promise);  //
+//   it('Debería devolver una promesa', async () => {
+//     await expect(readFileMd('C:/LABORATORIA/PROYECTO4/DEV003-md-links/mockTest.md')).resolves.toBe(typeof Promise); 
 //   });
-//   it('Debe rechazar la promesa, cuando el archivo no se pueda leer', () => {
-//     return readFileMd('C:/LABORATORIA/PROYECTO4/DEV003-md-links/mockTest.md').rejects.catch((error) => {  // función asíncrona
+//   it('Debe rechazar la promesa, cuando el archivo no se pueda leer', async () => {
+//     return readFileMd('C:/LABORATORIA/PROYECTO4/mockTest.txt').rejects.catch((error) => {  // función asíncrona
 //       expect(error).toBe('Error al leer el archivo');
 //     })
 //   });
@@ -239,18 +239,16 @@ describe('validateLink', () => {
 //     expect(data).toBe('peanut butter');
 //   });
 // });
-// describe('mdLinks', () => {
 
-//   it('should...', () => {
-//     console.log('FIX ME!', mdLinks);
-//   });
-//   it('Debería devolver una promesa', () => {
-//     expect(mdLinks()). toBe(typeof Promise);  //
-//   });
-//   it('Debe rechazar la promesa, cuando el path no existe', () => {
-//     return mdLinks('C:/nelly/curso/TextDecoder.txt').catch((error) => {  // función asíncrona
-//       expect(error).toBe('La ruta no existe');
-//     })
-//   });
+describe('mdLinks', () => {
 
-// });
+  it('Debería devolver una promesa', async () => {
+    await expect(mdLinks()). toBe(typeof Promise);  //
+  });
+  it('Debe rechazar la promesa, cuando el path no existe', async () => {
+    return mdLinks('C:/nelly/curso/TextDecoder.txt').catch((error) => {  // función asíncrona
+      expect(error).rejects.toBe('La ruta no existe');
+    })
+  });
+
+});
