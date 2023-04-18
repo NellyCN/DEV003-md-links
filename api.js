@@ -1,4 +1,4 @@
-const {
+   const {
   pathExists,
   pathIsAbsolute,
   changeToAbs,
@@ -50,13 +50,13 @@ const mdLinks = (path, options) => {
     }
   });
 };
-mdLinks("README.md", { validate: false })
-  .then((result) => {
-    console.log('ARRAY DE OBJETOS DE LINKS VALIDADOS', result);
-  })
-  .catch((error) => {
-    console.log('PROMESA RECHAZADA! "Tenemos problemas para leer esta ruta"', error);
-  });
+// mdLinks("README.md", { validate: false })
+//   .then((result) => {
+//     console.log('ARRAY DE OBJETOS DE LINKS VALIDADOS', result);
+//   })
+//   .catch((error) => {
+//     console.log('PROMESA RECHAZADA! "Tenemos problemas para leer esta ruta"', error);
+//   });
 
 module.exports = {
   mdLinks,

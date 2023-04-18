@@ -1,10 +1,11 @@
 const fs = require("fs"); // file system functions
 const path = require("path"); // path functions
+// const fsPromises = require('fs').promises //Del API de filessystems que trabaja con promesas
 
 const route =
   "C:/Users//Admin////Desktop//Courses//nodejs-fundamentals//7. path/examples/normalize.js";
 const routeErr = "C:LABORATORIAPROYECTO4DEV003-md-linksREADME.md";
-var routeAbs = "C:/LABORATORIA/PROYECTO4/DEV003-md-links/README.md";
+const routeAbs = "C:/LABORATORIA/PROYECTO4/DEV003-md-links/README.md";
 const routeRelative = "README.md";
 const routeJpg = "C:/LABORATORIA/PROYECTO4/DEV003-md-links/thumb.png";
 
@@ -60,6 +61,12 @@ const readFileMd = (route) => {
 // readFileMd(routeAbs).then(console.log).catch(console.error); // PAra evitar la promesa pendiente
 // console.log(readFileMd(routeAbs));
 
+// 6. LEE EL ARCHIVO DE LA RUTA
+// const readFileMd = (route) => fsPromises.readFile(route)
+// readFileMd(routeAbs).then((data) => {
+//   console.log(data.toString())  //resolve
+// }).catch(err => console.log(err)) //reject
+
 // 7. EXTRAE LINKS DEL ARCHIVO .MD funcion  q recibe data y retorna array de objetos
 const getLinks = (route) => {
   return new Promise((resolve, reject) => {
@@ -105,8 +112,8 @@ const validateLink = (arrayLinks) => {
           text: link.text,
           href: link.href,
           file: link.file,
-          status: error.status,
-          message: "Status is Undefined", // En el caso de los links que se muestran en status = "undefined", se mostrará el mensaje
+          status: 'Error de Url' ,
+          message: 'Fail-Error', // En el caso de los links que se muestran en status = "undefined", se mostrará el mensaje
         };
         return statusError;
       });
@@ -118,8 +125,8 @@ const validateLink = (arrayLinks) => {
 //   .then((arrlinks) => {  // si resolvemos la promesa debemos pasarle como argumento el array de links
 //       console.log("Array de Objetos", arrlinks)
 //       validateLink(arrlinks)
-//    .then((resultados) => {
-//    console.log("Agregando Status y Mensaje", resultados)})
+//    .then((linksvalidados) => {
+//    console.log("Agregando Status y Mensaje", linksvalidados)})
 //   })
 
 module.exports = {
@@ -127,7 +134,7 @@ module.exports = {
   pathIsAbsolute,
   changeToAbs,
   pathisfile,
-  isMdFile, // ...
+  isMdFile,
   readFileMd,
   getLinks,
   validateLink,

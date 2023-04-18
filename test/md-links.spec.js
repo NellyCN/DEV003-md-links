@@ -1,5 +1,5 @@
-// const { mdLinks } = require('../index.js');
-const { pathExists, pathIsAbsolute, changeToAbs, isMdFile, getLinks, validateLink } = require('../index.js');
+const { pathExists, pathIsAbsolute, changeToAbs, isMdFile, readFileMd, getLinks, validateLink } = require('../index.js');
+const { mdLinks } = require('../api');
 const path = require("path");
 
 global.fetch = jest.fn()
@@ -42,6 +42,16 @@ describe('extensionMdFile', () => {
   });
 });
 
+//TEST PARA LEER UN ARCHIVO
+describe('readFileMd', () => {
+
+  it('Debe rechazar la promesa, cuando el archivo no se pueda leer', () => {
+    return readFileMd('C:/LABORATORIA/PROYECTO4/mockTest.txt').then().catch((error) => {  // función asíncrona
+      expect(error.mensaje ).toBe("Este archivo no se puede leer. Por favor, verfique el archivo");
+    })
+  });
+});
+
 // TEST PARA OBTENER LOS LINKS EXISTENTES EN EL ARCHIVO .MD
 describe('getLinks', () => {
   it('Deberia extrar los LINKS del archivo .md como un array de Objetos', () => {
@@ -74,7 +84,7 @@ describe('getLinks', () => {
       },
       {
         text: 'Sitio oficial de npm (en inglés)',
-        href: 'https://www.npmjs.com/',
+        href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
       }
     ]
@@ -86,7 +96,7 @@ describe('getLinks', () => {
 
 // // TEST PARA VALIDAR LOS LINKS 
 describe('validateLink', () => {
-  it.only('Deberia hacer una petición fetch y mostrar los links con su status y un mensaje de "OK" o "FAIL"', () => {
+  it('Deberia hacer una petición fetch y mostrar los links con su status y un mensaje de "OK" o "Fail-Error"', () => {
     fetch
     .mockResolvedValueOnce({ status: 200})
     .mockResolvedValueOnce({ status: 200})
@@ -122,7 +132,7 @@ describe('validateLink', () => {
       },
       {
         text: 'Sitio oficial de npm (en inglés)',
-        href: 'https://www.npmjs.com/',
+        href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md'
       }
     ]
@@ -132,7 +142,7 @@ describe('validateLink', () => {
         href: 'https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/omise',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
         status: 200,
-        message: 'FAIL'
+        message: 'OK'
       },
       {
         text: 'How to Write a JavaScript Promise - freecodecamp (en inglés)',
@@ -152,22 +162,22 @@ describe('validateLink', () => {
         text: 'Tests de código asincrónico con Jest - Documentación oficial',
         href: 'https://jestjs.io/docs/es-ES/asynchronous',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 404,
-        message: 'OK'
+        status: 'Error de Url',
+        message: 'Fail-Error'
       },
       {
         text: 'Manual Mocks con Jest - Documentación oficial',
         href: 'https://jestjs.io/docs/es-ES/manual-mocks',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 404,
-        message: 'OK'
+        status: 'Error de Url',
+        message: 'Fail-Error'
       },
       {
         text: 'Sitio oficial de npm (en inglés)',
-        href: 'https://www.npmjs.com/',
+        href: 'https://docs.npmjs.com/getting-started/publishing-npm-packages',
         file: 'C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md',
-        status: 404,
-        message: 'OK'
+        status: 'Error de Url',
+        message: 'Fail-Error'
       }
     ]
     return validateLink(testArrayObjects).then(link => { 
@@ -177,44 +187,34 @@ describe('validateLink', () => {
   });
 });
 
-// describe('readFileMd', () => {
-//   test('Debería devolver una promesa', async () => {
-//     await expect(readFileMd('C:\\LABORATORIA\\PROYECTO4\\DEV003-md-links\\mockTest.md')).resolves.toBe(typeof Promise);  //
-//   });
-//   test('Debe rechazar la promesa, cuando el archivo no se pueda leer', async () => {
-//     await expect(readFileMd('C:/nelly/curso/TextDecoder.txt')).rejects.toBe(error);
-//   });
 
-// });
+describe('validateLink', () => {
+  // it('Debería devolver una promesa', () => {
+  //  return expect(validateLink([])). toBe(typeof Promise);  //
+  // });
+  // it('Debe rechazar la promesa, cuando el link no es válido', () => {
+  //   return validateLink([]).then((e) => { expect(e).toBe('')}).catch((error) => {  // función asíncrona
+  //     expect(error).toBe();
+  //   })
+  // });
+  it('Debe rechazar la promesa, cuando no recibe un array de objetos con links', () => {
+    return validateLink({}).then((e) => { expect(e).toBe([])}).catch((error) => {  // función asíncrona
+      expect(error.message).toBe('No es un array');
+    })
+  });
+})
 
-// describe('validateLink', () => {
-//   it('Debería devolver una promesa', () => {
-//     expect(validateLink([])). toBe(typeof Promise);  //
-//   });
-//   it('Debe rechazar la promesa, cuando el link no es válido', () => {
-//     return validateLink('C:/nelly/curso/TextDecoder.txt').catch((error) => {  // función asíncrona
-//       expect(error).toBe('La ruta no existe');
-//     })
-//   });
+describe('mdLinks', () => {
+  // it('Debería devolver una promesa', () => {
+  //   expect(mdLinks('C:/LABORATORIA/PROYECTO4/DEV003-md-links/README.md')). toBe(typeof Promise);  //
+  // });
+  it('Debe rechazar la promesa, cuando el path no existe', () => {
+    return mdLinks('C:/nelly/curso/TextDecoder.txt').catch((error) => {  // función asíncrona
+     console.log(error);
+      expect(error.message).toBe("La ruta ingresada no existe");
+    })
+  });
 
-// });
-// test('the data is peanut butter', () => {
-//   return fetchData().then(data => {
-//     expect(data).toBe('peanut butter');
-//   });
-// });
-// describe('mdLinks', () => {
 
-//   it('should...', () => {
-//     console.log('FIX ME!', mdLinks);
-//   });
-//   it('Debería devolver una promesa', () => {
-//     expect(mdLinks()). toBe(typeof Promise);  //
-//   });
-//   it('Debe rechazar la promesa, cuando el path no existe', () => {
-//     return mdLinks('C:/nelly/curso/TextDecoder.txt').catch((error) => {  // función asíncrona
-//       expect(error).toBe('La ruta no existe');
-//     })
-//   });
-
-// });
+  
+});
